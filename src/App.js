@@ -1,13 +1,16 @@
-import React from 'react';
-import Home from './pages/Home';
+import {BrowserRouter as Router,Routes,Route} from "react-router-dom";
+import TaskList from "./TaskList";
+import TaskDetails from "./TaskDetails";
 
 function App() {
   return (
-    <div>
-      <Home />
-
-      {/* TODO: Replace this placeholder with Routes */}
-    </div>
+    <Router>
+      <Routes>
+        <Route path='/' element={<TaskList/>}/>
+        <Route path="/task/:id" element={<TaskDetails/>}/>
+      </Routes>
+    </Router>
+     
   );
 }
 
